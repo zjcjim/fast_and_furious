@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Pi Device</title>
+</head>
+
+<body>
+    <script>
+        // 发送请求获取设备 'pi' 的 IP 地址并打开浏览器
+        function openPiDevice() {
+            // 发送 GET 请求获取设备信息
+            fetch('http://124.71.164.229:5000/get_ips')
+                .then(response => response.json())
+                .then(data => {
+                    // 获取设备 'pi' 的 IP 地址
+                    const piIP = data['pi'];
+                    if (piIP) {
+                        const url = `http://${piIP}:8000`;
+                        window.open(url, '_blank'); // 在新标签页打开地址
+                    } else {
+                        console.error("Device 'pi' not found or IP address not registered.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching device information:', error);
+                });
+        }
+
+        // 在页面加载完成后调用打开函数
+        document.addEventListener('DOMContentLoaded', openPiDevice);
+    </script>
+</body>
+
+</html>

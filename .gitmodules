@@ -4,3 +4,6 @@
 [submodule "pi-arduino-code"]
 	path = pi-arduino-code
 	url = https://github.com/zjcjim/pi-arduino-code.git
+[submodule "deep-learning-detect"]
+	path = deep-learning-detect
+	url = https://github.com/zjcjim/deep-learning-detect.git

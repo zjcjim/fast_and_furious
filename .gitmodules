@@ -7,3 +7,6 @@
 [submodule "deep-learning-detect"]
 	path = deep-learning-detect
 	url = https://github.com/zjcjim/deep-learning-detect.git
+[submodule "cloud-ip-server"]
+	path = cloud-ip-server
+	url = https://github.com/zjcjim/cloud-ip-server.git
